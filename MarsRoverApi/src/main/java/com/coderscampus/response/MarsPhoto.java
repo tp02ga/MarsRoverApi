@@ -1,10 +1,16 @@
-package com.coderscampus;
+package com.coderscampus.response;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarsPhoto {
   private Long id;
   private Integer sol;
   private MarsCamera camera;
+  @JsonProperty("img_src")
   private String imgSrc;
+  @JsonProperty("earth_date")
+  private String earthDate;
+  private MarsRover rover;
   
   public Long getId() {
     return id;
@@ -29,6 +35,18 @@ public class MarsPhoto {
   }
   public void setImgSrc(String imgSrc) {
     this.imgSrc = imgSrc;
+  }
+  public String getEarthDate() {
+    return earthDate;
+  }
+  public void setEarthDate(String earthDate) {
+    this.earthDate = earthDate;
+  }
+  public MarsRover getRover() {
+    return rover;
+  }
+  public void setRover(MarsRover rover) {
+    this.rover = rover;
   }
   @Override
   public String toString() {
