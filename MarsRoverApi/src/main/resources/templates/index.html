@@ -6,18 +6,18 @@
   <body>
     <div class="container">
       <h2>Welcome to the Mars Rover API Web App</h2>
-      <div class="row">
+      <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(),4)}" class="row" style="margin-bottom: 2em">
         <div class="col-sm">
-          <img th:src="${roverData.photos[0].imgSrc}" class="img-fluid"/>
+          <img th:src="${roverData.photos[index].imgSrc}" class="img-fluid"/>
         </div>
-        <div class="col-sm">
-          <img th:src="${roverData.photos[1].imgSrc}" class="img-fluid"/>
+        <div class="col-sm" th:if="${index+1 < roverData.photos.size()}">
+          <img th:src="${roverData.photos[index+1].imgSrc}" class="img-fluid"/>
         </div>
-        <div class="col-sm">
-          <img th:src="${roverData.photos[2].imgSrc}" class="img-fluid"/>
+        <div class="col-sm" th:if="${index+2 < roverData.photos.size()}">
+          <img th:src="${roverData.photos[index+2].imgSrc}" class="img-fluid"/>
         </div>
-        <div class="col-sm">
-          <img th:src="${roverData.photos[3].imgSrc}" class="img-fluid"/>
+        <div class="col-sm" th:if="${index+3 < roverData.photos.size()}">
+          <img th:src="${roverData.photos[index+3].imgSrc}" class="img-fluid"/>
         </div>
       </div>
       
