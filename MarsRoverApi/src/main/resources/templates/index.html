@@ -1,11 +1,28 @@
 <html xmlns:th="http://thymeleaf.org">
   <head>
     <title>Mars Rover API App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
   </head>
   <body>
-    <h2>Welcome to the Mars Rover API Web App</h2>
-    
-    <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/>
+    <div class="container">
+      <h2>Welcome to the Mars Rover API Web App</h2>
+      <div class="row">
+        <div class="col-sm">
+          <img th:src="${roverData.photos[0].imgSrc}" class="img-fluid"/>
+        </div>
+        <div class="col-sm">
+          <img th:src="${roverData.photos[1].imgSrc}" class="img-fluid"/>
+        </div>
+        <div class="col-sm">
+          <img th:src="${roverData.photos[2].imgSrc}" class="img-fluid"/>
+        </div>
+        <div class="col-sm">
+          <img th:src="${roverData.photos[3].imgSrc}" class="img-fluid"/>
+        </div>
+      </div>
+      
+<!--       <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/> -->
+    </div>
     
   </body>
 </html>
