@@ -7,11 +7,14 @@
     <div class="container">
       <h2>Welcome to the Mars Rover API Web App</h2>
       
-      <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em;">
-        <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiousity</button>
-        <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
-        <button type="button" class="btn btn-secondary" id="marsApiSpirit">Spirit</button>
-      </div>
+      <form method="post" action="" id="frmRoverType"> 
+        <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
+        <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em;">
+          <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiousity</button>
+          <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
+          <button type="button" class="btn btn-secondary" id="marsApiSpirit">Spirit</button>
+        </div>
+      </form>
 
       <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(),4)}" class="row" style="margin-bottom: 2em">
         <div class="col-sm" th:if="${index < roverData.photos.size()}">
