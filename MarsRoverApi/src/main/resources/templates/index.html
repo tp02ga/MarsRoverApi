@@ -8,7 +8,7 @@
       <h2>Welcome to the Mars Rover API Web App</h2>
       
       <form method="get" action="" id="frmRoverType"> 
-        <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
+        <input type="hidden" th:field="${homeDto.marsApiRoverData}" />
         <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em;">
           <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiousity</button>
           <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
@@ -16,7 +16,7 @@
         </div>
         
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="defaultCheck1">
+          <input class="form-check-input" type="checkbox" th:field="${homeDto.defaultCheck1}">
           <label class="form-check-label" for="defaultCheck1">
             Default checkbox
           </label>
@@ -24,7 +24,7 @@
         
         <div class="form-group">
           <label for="marsSol" class="col-form-label col-form-label-lg">Mars Sol (aka Mars Day): </label>
-          <input class="form-control form-control-lg" type="number" id="marsSol" name="marsSol" min="0" value="1"/> 
+          <input class="form-control form-control-lg" type="number" th:field="${homeDto.marsSol}" min="0"/> 
         </div>
         
         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
@@ -44,8 +44,6 @@
           <img th:src="${roverData.photos[index+3].imgSrc}" class="img-fluid"/>
         </div>
       </div>
-      
-<!--       <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/> -->
     </div>
     <script type="text/javascript" src="/js/index.js"></script>
   </body>
