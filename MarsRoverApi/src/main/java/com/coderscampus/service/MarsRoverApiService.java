@@ -64,4 +64,8 @@ public class MarsRoverApiService {
     
     return urls;
   }
+
+  public Map<String, List<String>> getValidCameras() {
+    return validCameras;
+  }
 }

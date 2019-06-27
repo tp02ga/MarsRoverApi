@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-12 col-md-4">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraFhaz}">
+              <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraFhaz}" th:attrappend="disabled=${!#lists.contains(validCameras, 'FHAZ')}">
               <label class="form-check-label" for="cameraFhaz1">
                 Front Hazard Avoidance Camera
               </label>
@@ -34,7 +34,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMast}">
+            <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMast}" th:attrappend="disabled=${!#lists.contains(validCameras, 'MAST')}">
             <label class="form-check-label" for="cameraMast1">
               Mast Camera
             </label>
