@@ -1,5 +1,7 @@
 package com.coderscampus.web;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,7 +19,7 @@ public class HomeController {
   private MarsRoverApiService roverService;
   
   @GetMapping("/")
-  public String getHomeView (ModelMap model, HomeDto homeDto) {
+  public String getHomeView (ModelMap model, HomeDto homeDto) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     // if request param is empty, then set a default value
     if (StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
       homeDto.setMarsApiRoverData("Opportunity");
