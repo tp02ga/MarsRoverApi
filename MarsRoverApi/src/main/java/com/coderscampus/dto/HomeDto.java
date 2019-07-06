@@ -1,6 +1,7 @@
 package com.coderscampus.dto;
 
 public class HomeDto {
+  private Long userId;
   private String marsApiRoverData;
   private Integer marsSol;
   private Boolean cameraFhaz;
@@ -14,6 +15,12 @@ public class HomeDto {
   private Boolean cameraMinites;
   private Boolean rememberPreferences;
   
+  public Long getUserId() {
+    return userId;
+  }
+  public void setUserId(Long userId) {
+    this.userId = userId;
+  }
   public String getMarsApiRoverData() {
     return marsApiRoverData;
   }
