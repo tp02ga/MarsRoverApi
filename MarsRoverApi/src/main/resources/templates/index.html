@@ -99,7 +99,15 @@
           <input class="form-control form-control-lg" type="number" th:field="${homeDto.marsSol}" min="0"/> 
         </div>
         
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        <div class="row">
+          <div class="col-3 col-md-2">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+          <div class="col-9 col-md-10" style="margin-top: 0.7em">
+            <input type="checkbox" th:field="${homeDto.rememberPreferences}"/>
+            <label for="rememberPreferences1">Remember Preferences</label>
+          </div>
+        </div>
       </form>
 
       <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(),4)}" class="row" style="margin-bottom: 2em">

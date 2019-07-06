@@ -20,7 +20,9 @@ let marsRoverType = getUrlParameter('marsApiRoverData')
 highlightBtnByRoverType(marsRoverType)
 
 let marsSol = getUrlParameter('marsSol')
-document.getElementById('marsSol').value = marsSol
+if (marsSol != null && marsSol != '' && marsSol >= 0) {
+	document.getElementById('marsSol').value = marsSol
+}
 
 function highlightBtnByRoverType (roverType) {
 	if (roverType == '') 
