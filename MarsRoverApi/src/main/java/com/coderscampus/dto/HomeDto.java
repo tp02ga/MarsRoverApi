@@ -93,4 +93,12 @@ public class HomeDto {
   public void setRememberPreferences(Boolean rememberPreferences) {
     this.rememberPreferences = rememberPreferences;
   }
+  @Override
+  public String toString() {
+    return "HomeDto [userId=" + userId + ", marsApiRoverData=" + marsApiRoverData + ", marsSol=" + marsSol
+        + ", cameraFhaz=" + cameraFhaz + ", cameraRhaz=" + cameraRhaz + ", cameraMast=" + cameraMast
+        + ", cameraChemcam=" + cameraChemcam + ", cameraMahli=" + cameraMahli + ", cameraMardi=" + cameraMardi
+        + ", cameraNavcam=" + cameraNavcam + ", cameraPancam=" + cameraPancam + ", cameraMinites=" + cameraMinites
+        + ", rememberPreferences=" + rememberPreferences + "]";
+  }
 }
