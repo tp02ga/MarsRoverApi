@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.coderscampus.dto.HomeDto;
+import com.coderscampus.repository.PreferencesRepository;
 import com.coderscampus.response.MarsRoverApiResponse;
 import com.coderscampus.service.MarsRoverApiService;
 
@@ -38,7 +39,7 @@ public class HomeController {
   
   @PostMapping("/")
   public String postHomeView (HomeDto homeDto) {
-    System.out.println(homeDto);
+    roverService.save(homeDto);
     return "redirect:/";
   }
   
