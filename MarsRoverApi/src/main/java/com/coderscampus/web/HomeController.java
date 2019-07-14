@@ -5,9 +5,9 @@ import java.lang.reflect.InvocationTargetException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coderscampus.dto.HomeDto;
 import com.coderscampus.response.MarsRoverApiResponse;
@@ -44,6 +44,15 @@ public class HomeController {
     return "index";
   }
 
+  @GetMapping("/savedPreferences")
+  @ResponseBody
+  public HomeDto getSavedPreferences (Long userId) {
+    if (userId != null)
+      return roverService.findByUserId(userId);
+    else
+      return createDefaultHomeDto(userId);
+  }
+  
   private HomeDto createDefaultHomeDto(Long userId) {
     HomeDto homeDto = new HomeDto();
     homeDto.setMarsApiRoverData("Opportunity");
