@@ -1,6 +1,9 @@
 let userId = getUrlParameter('userId')
 if (userId == null || userId == '') {
 	userId = localStorage.getItem('userId')
+	if (userId == null || userId == '') {
+		document.getElementById('createUser').value = true
+	}
 }
 
 if (userId != null && userId != '') {
@@ -25,11 +28,11 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-let marsRoverType = getUrlParameter('marsApiRoverData')
+let marsRoverType = document.getElementById('marsApiRoverData').value
 		
 highlightBtnByRoverType(marsRoverType)
 
-let marsSol = getUrlParameter('marsSol')
+let marsSol = document.getElementById('marsSol').value
 if (marsSol != null && marsSol != '' && marsSol >= 0) {
 	document.getElementById('marsSol').value = marsSol
 }
